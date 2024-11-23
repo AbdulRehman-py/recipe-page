@@ -1,0 +1,193 @@
+/* fonts intilization */
+@font-face {
+    font-family: 'Outfit';
+    src: url('../assets/fonts/outfit/Outfit-VariableFont_wght.ttf') format('truetype');
+    font-weight: 100 900; /* Define the range of weights available */
+    font-style: normal;
+  }
+  
+  @font-face {
+    font-family: 'Young Serif';
+    src: url('../assets/fonts/young-serif/YoungSerif-Regular.ttf') format('truetype');
+    font-weight: normal;
+    font-style: normal;
+  }
+
+/* border box model: https://css-tricks.com/box-sizing/ */
+@layer base  {
+    :root {
+       --outfit: 'Outfit', sans-serif;
+       --young-serif: 'Young Serif', serif;
+
+       --white: #fff;
+       --black: #000;
+       --silk: cornsilk; 
+       --light-purple:  hsl(330, 100%, 98%);
+        --brown:  #852a47;
+       --h1: 2rem;
+       --h2: 1.5rem;
+       --h3: 1rem;
+       --scale: 1.5;
+       --base: 0.80rem;
+
+       
+    }
+
+
+html {
+    box-sizing: border-box;
+  }
+
+  *,
+  *::before,
+  *::after {
+    box-sizing: inherit;
+  }
+
+  body {
+    background-color: var(--silk);
+    font-family: var(--outfit);
+    padding: 0;
+    margin: 0;
+    font-size: var(--base);
+  }
+
+  * h2,h1 {
+    color: var(--brown);
+    font-family: var(--young-serif);
+  }
+}
+
+@layer start {
+    #main-section {
+    
+        padding: 3rem 0rem 3rem 0rem;
+        
+    }
+    .main-content-container {
+        background-color: var(--white);
+        max-width: 600px;
+        padding: 3rem 2rem 3rem 2rem;
+        border-radius: 12px;
+        
+    }
+
+   .egg {
+    width: auto;
+   }
+    img {
+        max-width: 100%;
+        height: auto;
+        width: auto;
+        border-radius: 5px ;
+    }
+
+    h1 {
+        font-family: var(--young-serif);
+        font-size: var(--h1);
+        
+        
+    }
+}
+
+@layer timer {
+    .Recipe-time-container{
+        width: 100%;
+        background-color: var(--light-purple);
+        border: 1px solid var(--light-purple);
+        outline: none;
+        margin: 0;
+        border-radius: 5px;
+        padding: 1rem 1rem;
+       
+    }
+
+    .Recipe-time-container ul {
+        padding: 0 0.80rem;
+        margin: 0;
+    }
+
+    .Recipe-time-container li {
+        padding-bottom: 0.50rem;
+    }
+    h3 {
+        font-family: var(--outfit);
+        font-size: var(--h3);
+        color:  var(--brown);
+    
+    }
+    
+}
+
+@layer ingrdients {
+    .ingredients-container li {
+       
+        padding: 0 0 0.50rem 0;
+
+    }
+    .ingredients-container ul {
+        padding: 1rem 0.80rem;
+        margin: 0;
+        margin-bottom: 0.50rem;
+    }
+
+    .ingredients-container h2 {
+        font-size: var(--h2);
+        margin-bottom: 0;
+    }
+    .ingredients-container {
+        border-bottom: solid 1px #ccc;
+    }
+}
+
+@layer instructions-container {
+    .instructions-container ol {
+        padding: 0 1rem;
+        margin: 0;
+        margin-bottom: 1rem;
+    }
+
+    .instructions-container li {
+        padding: 0 0 0.8rem 0.90rem;
+    }
+    .instructions-container h2 {
+        
+        font-size: var(--h2);
+        
+    }
+
+    .instructions-container {
+        border-bottom: solid 1px #ccc;
+    }
+
+
+}
+
+#nutrion h2 {
+   
+    font-size: var(--h2);
+    margin-bottom: 0;
+
+}
+
+#nutrion table {
+    border-collapse: collapse;
+    width: 100%;
+}
+
+#nutrion tr {
+    border-bottom: 1px solid #ccc;
+}
+
+#nutrion td {
+    padding: 0.50rem;
+    text-align: left;
+}
+
+#main-section  {
+    display: flex;
+    justify-content: center; /* Center horizontally */
+    align-items: center; /* Center vertically */
+    min-height: 100vh; /* Ensure the body takes up the full viewport height */
+    
+}
